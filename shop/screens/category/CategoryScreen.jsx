@@ -3,15 +3,23 @@ import { FlatList, View, StyleSheet} from 'react-native'
 import { CATEGORIES } from '../../data/data'
 import Category from '../../components/category/Category'
 
-function renderCategory (itemData){
-    return<Category 
-    title={itemData.item.title} 
-    color={itemData.item.color}
-    />
-}
+
 
 // Main function
-const CategoryScreen = () => {
+const CategoryScreen = ({navigation}) => {
+
+    function renderCategory (itemData){
+        function navigate(){
+            navigation.navigate('MealOverview',{categoryId:itemData.item.id})
+        }
+        return<Category 
+        title={itemData.item.title} 
+        color={itemData.item.color}
+        onPress={navigate}
+        />
+    }
+
+
   return (
     <FlatList style={styles.container}
     data={CATEGORIES}
