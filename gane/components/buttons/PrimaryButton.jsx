@@ -1,13 +1,10 @@
 import React from 'react'
 import { Pressable, Text, View, StyleSheet} from 'react-native'
 
-const PrimaryButton = ({children}) => {
+const PrimaryButton = ({children, onPress}) => {
 
-    const handlePress = ()=>{
-        console.log("press")
-    }
   return (
-    <Pressable onPress={handlePress}>
+    <Pressable onPress={onPress}>
         <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>
                 {children}
