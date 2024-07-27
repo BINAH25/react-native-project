@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { Text, View } from 'react-native'
 function GameScreen() {
   return (
-    <div>
-      
-    </div>
+    <View>
+      <Text>Louis</Text>
+    </View>
   )
 }
 
