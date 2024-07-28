@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text,StyleSheet } from 'react-native'
+
 const MealDeatail = ({duration,complexity,affordability}) => {
   return (
     <View style={styles.details}>
