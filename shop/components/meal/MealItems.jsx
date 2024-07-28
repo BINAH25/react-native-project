@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Pressable, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import MealDeatail from '../mealDetail/MealDeatail'
 
 const MealItems = ({
   title,
@@ -27,11 +28,10 @@ const MealItems = ({
           source={{uri:imageUrl}} style={styles.image}/>
           <Text style={styles.title}>{title}</Text>
         </View>
-        <View style={styles.details}>
-          <Text style={styles.detailItem}>{duration}m</Text>
-          <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-          <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-        </View>
+        <MealDeatail 
+        duration={duration}
+        complexity={complexity}
+        affordability={affordability}/>
       </Pressable>
     </View>
   )
