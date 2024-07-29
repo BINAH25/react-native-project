@@ -1,12 +1,10 @@
 import React from 'react'
 import { ScrollView, View, Text } from 'react-native'
+import ExpensesOutput from '../../components/ExpensesOutput/ExpensesOutput'
 
 const RecentExpense = () => {
   return (
-    <ScrollView>
-       <Text> RecentExpense </Text>
-      
-    </ScrollView>
+    <ExpensesOutput periodName="Last 7 Days"/> 
   )
 }
 

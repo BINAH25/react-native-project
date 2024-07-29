@@ -1,12 +1,12 @@
 import React from 'react'
 import { ScrollView, View, Text } from 'react-native'
+import ExpensesOutput from '../../components/ExpensesOutput/ExpensesOutput'
 
 const AllExpenses = () => {
   return (
-    <ScrollView>
-        <Text>AllExpenses</Text>
-      
-    </ScrollView>
+   
+    <ExpensesOutput periodName='Total'/>
+   
   )
 }
 
