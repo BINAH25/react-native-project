@@ -8,18 +8,28 @@ import RecentExpense from './screens/RecentExpenses/RecentExpense';
 import ManageExpenses from './screens/ManageExpenses/ManageExpenses';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { GlobalStyles } from './constants/styles';
+import IconButton from './components/button/IconButton';
 
 const Stack = createNativeStackNavigator()
 const BottomTab = createBottomTabNavigator()
 
 function MyTabs() {
   return (
-    <BottomTab.Navigator screenOptions={{
+    <BottomTab.Navigator screenOptions={ ({navigation}) => ({
       headerStyle:{backgroundColor: GlobalStyles.colors.primary500},
       headerTintColor: 'white',
       tabBarStyle:{backgroundColor:GlobalStyles.colors.primary500 },
       tabBarActiveTintColor: GlobalStyles.colors.accent500 ,
-    }}>
+      headerRight: ({tintColor})=> (
+        <IconButton 
+        icon='add' 
+        size={32} 
+        color={tintColor}
+        onPress={() =>{
+          navigation.navigate('ManageExpense')
+        }}/>
+      )
+    })}>
       <BottomTab.Screen 
       name="recent" 
       component={RecentExpense} 
@@ -41,18 +51,24 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-        name='ExpensesOverview' 
-        component={MyTabs}
-        options={{headerShown:false}}/>
-        <Stack.Screen 
-        name='ManageExpense' 
-        component={ManageExpenses}
-        options={{title:'Manage Expense'}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar style='light'/>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerStyle:{backgroundColor:GlobalStyles.colors.primary500},
+          headerTintColor: 'white'
+        }}>
+          <Stack.Screen 
+          name='Back' 
+          component={MyTabs}
+          options={{headerShown:false}}/>
+          <Stack.Screen 
+          name='ManageExpense' 
+          component={ManageExpenses}
+          options={{title:'Manage Expense', presentation:'modal'}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
 
