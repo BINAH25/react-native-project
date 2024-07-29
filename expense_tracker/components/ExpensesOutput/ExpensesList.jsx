@@ -7,6 +7,7 @@ const renderExpenses = (itemData)=>{
     const item = itemData.item
     return(
         <ExpensesItem 
+        id={item.id}
         title={item.title}
         date={item.date}
         amount={item.amount}/>
