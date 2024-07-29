@@ -16,13 +16,13 @@ const ManageExpenses = ({route, navigation}) => {
   },[navigation,isEditing])
 
   const handleDelete = ()=>{
-
+    navigation.goBack()
   }
   const handleCancel = ()=>{
-
+    navigation.goBack()
   }
   const handleConfirm = ()=>{
-
+    navigation.goBack()
   }
 
 
