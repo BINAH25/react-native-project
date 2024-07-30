@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import IconButton from '../../components/button/IconButton'
 import { GlobalStyles } from '../../constants/styles'
 import Button from '../../components/button/Button'
+import ExpenseForm from '../../components/form/ExpenseForm'
 
 const ManageExpenses = ({route, navigation}) => {
   const expenseId = route.params?.expenseId
@@ -28,6 +29,7 @@ const ManageExpenses = ({route, navigation}) => {
 
   return (
     <View style={styles.container}> 
+    <ExpenseForm/>
     <View style={styles.buttons}>
       <Button style={styles.button} mode='flat' onPress={handleCancel}> Cancel</Button>
       <Button  style={styles.button} onPress={handleConfirm}> {isEditing ? "Update" : "Add"}</Button>
