@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     text:{
-        fontSize: 16
+        fontSize: 16,
+        color:'white'
     }
   });
   
