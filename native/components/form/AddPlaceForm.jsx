@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, ScrollView,View, Text, TextInput, KeyboardAvoidingView,Platform} from 'react-native'
 import { Colors } from '../../constants/colors'
 import ImagePicker from '../ImagePicker/ImagePicker'
+import LocationPicker from '../LocationPicker/LocationPicker'
 
 const AddPlaceForm = () => {
     const [title, setTtitle] = useState('')
@@ -22,6 +23,7 @@ const AddPlaceForm = () => {
                 autoCorrect={false}
                 value={title}/>
                 <ImagePicker/>
+                <LocationPicker/>
             </View>
         </ScrollView>
        
