@@ -13,8 +13,8 @@ const AddPlaceForm = () => {
 
     return (
         
-        <ScrollView>
-            <View style={styles.container}>
+        <ScrollView style={styles.container}>
+            <View>
                 <Text style={styles.label}>Title</Text>
                 <TextInput
                 style={styles.input}
@@ -22,9 +22,9 @@ const AddPlaceForm = () => {
                 autoCapitalize='none'
                 autoCorrect={false}
                 value={title}/>
-                <ImagePicker/>
-                <LocationPicker/>
             </View>
+            <ImagePicker/>
+            <LocationPicker/>
         </ScrollView>
        
     );
