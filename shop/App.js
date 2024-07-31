@@ -6,8 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MealDetailScreen from './screens/mealDetail/MealDetailScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+// import { Provider } from 'react-redux';
+// import { store } from './store/store';
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <>
       <StatusBar style='dark'/>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen 
@@ -40,7 +40,7 @@ export default function App() {
             <Stack.Screen name='MealDetail' component={MealDetailScreen}/>
           </Stack.Navigator>
         </NavigationContainer>
-      </Provider>
+      {/* </Provider> */}
     </>
   );
 }
